@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assignmentstyles.css">
+<style>
+  .menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.div,
+.divtabletnmobile {
+  background-color: darkgray;
+  box-sizing: border-box;
+  border: 2px solid black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding: 0 12px 12px;
+}
+
+.div p {
+  clear: both;
+}
+
+h1 {
+  font-size: large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#background {
+  background-color: whitesmoke;
+  text-align: center;
+  color: black;
+  margin: 0;
+  padding: 60px;
+}
+
+#chicken,
+#beef,
+#sushi {
+  width: 100px;
+  height: fit-content;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  float: right;
+  margin-bottom: 12px;
+  clear: both;
+  margin-top: 0;
+  margin-right: -12px;
+}
+
+#chicken { background-color: pink; }
+#beef { background-color: yellow; }
+#sushi { background-color: rgb(223, 0, 34); }
+
+/* Desktop: 3 boxes in same row */
+@media (min-width: 992px) {
+  .div,
+  .divtabletnmobile {
+    flex: 0 0 calc(33.333% - 40px); /* equal widths, account for gap */
+    margin: 20px;
+  }
+}
+
+/* Tablet: chicken + beef in same row, sushi on next */
+@media (min-width: 768px) and (max-width: 991px) {
+  .div {
+    flex: 0 0 calc(50% - 20px);
+    margin: 10px;
+  }
+
+  .divtabletnmobile {
+    flex: 0 0 100%;
+    margin: 10px auto;
+  }
+}
+
+/* Mobile: stack full width */
+@media (max-width: 767px) {
+  .div,
+  .divtabletnmobile {
+    flex: 0 0 100%;
+    margin: 10px auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+  <h1>Our Menu</h1>
+
+  <div class="menu-container">
+    <div class="div">
+      <div id="chicken">Chicken</div>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores, delectus?
+        Non doloribus illum, eos recusandae quas, distinctio rem architecto maxime numquam magnam
+        consequuntur vero est ipsa fugit odio quibusdam!
+      </p>
+    </div>
+
+    <div class="div">
+      <div id="beef">Beef</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quae eius reiciendis accusantium sunt tenetur esse saepe maxime excepturi.
+        Itaque voluptas rerum enim dolorum, necessitatibus natus architecto accusantium eligendi
+        adipisci eius?
+      </p>
+    </div>
+
+    <div class="divtabletnmobile">
+      <div id="sushi">Sushi</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+        Eveniet ex possimus accusamus molestiae dolores amet quos 
+        dignissimos suscipit quod quae voluptatem nobis ullam doloribus
+        earum, sequi magnam provident modi minima.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
